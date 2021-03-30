@@ -1,0 +1,12 @@
+[build]
+  command = "NODE_ENV=production gatsby build"
+  publish = "public/"
+  functions = "./functions"
+
+[template]
+  incoming-hooks = ["Ghost"]
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
