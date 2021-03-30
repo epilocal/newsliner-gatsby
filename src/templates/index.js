@@ -43,11 +43,11 @@ const Index = ({ data, location, pageContext }) => {
                 <div className="outer">
                     <section className="inner posts">
                       <div className="post-feed">
-                        <PostCard key={featuredPosts[0].node.id} post={featuredPosts[0].node} large />
+                        {featuredPosts.length > 0 && <PostCard key={featuredPosts[0].node.id} post={featuredPosts[0].node} large /> }
                         {firstOtherPosts.map(({ node }) => (
                             <PostCard key={node.id} post={node} />
                         ))}
-                        <PostCard key={featuredPosts[1].node.id} post={featuredPosts[1].node} large />
+                        {featuredPosts.length > 1 && <PostCard key={featuredPosts[1].node.id} post={featuredPosts[1].node} large /> }
                         {secondOtherPosts.map(({ node }) => (
                             <PostCard key={node.id} post={node} />
                         ))}
