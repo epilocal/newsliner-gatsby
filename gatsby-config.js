@@ -38,6 +38,13 @@ module.exports = {
         siteUrl: process.env.SITEURL || config.siteUrl,
     },
     plugins: [
+        {
+          resolve: "gatsby-plugin-google-tagmanager",
+          options: {
+            // Enter your Google Tag Manager ID here
+            id: "YOUR_GOOGLE_TAGMANAGER_ID",
+          },
+        },
         /**
          *  Content Plugins
          */
