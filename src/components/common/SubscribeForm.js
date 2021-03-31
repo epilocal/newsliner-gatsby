@@ -34,7 +34,7 @@ const SubscribeForm = ({ children, buttonText, successMessage, errorMessage, cus
        });
        return response.json();
      }
-     postData(`https://romantic-jepsen-1210d2.netlify.app/api/subscribe/`)
+     postData(`https://wonderful-shaw-a1a7e7.netlify.app/api/subscribe/`)
        .then(data => {
          console.log(data);
          setTimeout(form.reset);

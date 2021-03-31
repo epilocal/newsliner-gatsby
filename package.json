@@ -1,13 +1,13 @@
 {
-  "name": "gatsby-starter-ghost",
-  "description": "A starter template to build lightning fast websites with Ghost and Gatsby",
+  "name": "newsliner-gatsby",
+  "description": "A starter template to build static websites with Ghost and Gatsby using the Newsliner theme by Epilocal",
   "version": "1.0.0",
   "license": "MIT",
-  "author": "Ghost Foundation",
-  "homepage": "https://docs.ghost.org/api/gatsby/",
+  "author": "Epilocal",
+  "homepage": "https://www.epilocal.com/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tryghost/gatsby-starter-ghost.git"
+    "url": "git+https://github.com/epilocal/newsliner-gatsby.git"
   },
   "resolutions": {
     "sharp": "0.27.1"
@@ -16,7 +16,7 @@
     "node": ">= 10.13.0"
   },
   "bugs": {
-    "url": "https://github.com/tryghost/gatsby-starter-ghost/issues"
+    "url": "https://github.com/epilocal/newsliner-gatsby/issues"
   },
   "keywords": [
     "gatsby",

@@ -2,23 +2,22 @@ const jwt = require('jsonwebtoken');
 const axios = require('axios');
 
 exports.handler = async (event, context) => {
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE'
+  };
+
   // Only allow POST
   if (event.httpMethod !== 'POST') {
     return {
-      statusCode: 405,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json",
-      },
+      statusCode: 200,
+      headers,
       body: 'Method Not Allowed' };
   }
   const errorGen = msg => {
     return {
       statusCode: 500,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json",
-      },
       body: msg
     };
   };
@@ -50,19 +49,11 @@ exports.handler = async (event, context) => {
     if (response.status >= 300 || response.status < 200) {
       return {
         statusCode: response.status,
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json",
-        },
         body: response
       };
     }
     return {
       statusCode: 200,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify({ msg: "Successfully subscribed", detail: response.data, }),
     };
 
@@ -71,10 +62,6 @@ exports.handler = async (event, context) => {
     console.log(err); // output to netlify function log
     return {
       statusCode: 500,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify({ msg: err.message }),
     };
   }
