@@ -7,8 +7,6 @@ const SubscribeForm = ({ children, buttonText, successMessage, errorMessage, cus
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [showLoading, setShowLoading] = useState(false);
-  //let formTypeQuery = '';
-  //if (formType) {formTypeQuery = `&form_type=${formType}` };
 
   const onSubmit = (values, form) => {
     setShowLoading(true);
@@ -39,7 +37,7 @@ const SubscribeForm = ({ children, buttonText, successMessage, errorMessage, cus
          console.log(data);
          setTimeout(form.reset);
          setShowLoading(false);
-         if (data.statusCode  >= 200 && data.statusCode < 400) { setShowSuccessMessage(true) }
+         if (data.success) { setShowSuccessMessage(true) }
          else { setShowErrorMessage(true) }
        })
        .catch((error) => {
@@ -103,7 +101,7 @@ const SubscribeForm = ({ children, buttonText, successMessage, errorMessage, cus
 
 SubscribeForm.defaultProps = {
   successMessage: 'Thanks! Your email address has been successfully added - look out for an email from us',
-  errorMessage: 'Sorry, something went wrong on our side - please try again later or send a message on our Contact Us page',
+  errorMessage: 'Sorry, something went wrong on our side - please try again later',
   buttonText: 'Subscribe'
 };
 

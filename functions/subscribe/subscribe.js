@@ -54,7 +54,7 @@ exports.handler = async (event, context) => {
     }
     return {
       statusCode: 200,
-      body: JSON.stringify({ msg: "Successfully subscribed", detail: response.data, }),
+      body: JSON.stringify({ msg: "Successfully subscribed", success: true, duplicate: false, detail: response.data, }),
     };
 
 
@@ -62,8 +62,8 @@ exports.handler = async (event, context) => {
     console.log(err); // output to netlify function log
     if (err.response.status === 422) {
       return {
-        statusCode: 422,
-        body: JSON.stringify({ msg: "Already subscribed", detail: err.response.data, }),
+        statusCode: 200,
+        body: JSON.stringify({ msg: "Already subscribed", success: true, duplicate: true, detail: err.response.data, }),
       };
     }
     else {
