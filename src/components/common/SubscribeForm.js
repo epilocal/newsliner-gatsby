@@ -32,7 +32,7 @@ const SubscribeForm = ({ children, buttonText, successMessage, errorMessage, cus
        });
        return response.json();
      }
-     postData(`${process.env.SITEURL}/api/subscribe/`)
+     postData('/api/subscribe/')
        .then(data => {
          console.log(data);
          setTimeout(form.reset);

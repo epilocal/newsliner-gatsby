@@ -2,17 +2,10 @@ const jwt = require('jsonwebtoken');
 const axios = require('axios');
 
 exports.handler = async (event, context) => {
-  const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE'
-  };
-
   // Only allow POST
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 200,
-      headers,
       body: 'Method Not Allowed' };
   }
   const errorGen = msg => {
