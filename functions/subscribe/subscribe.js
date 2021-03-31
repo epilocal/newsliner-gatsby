@@ -46,15 +46,9 @@ exports.handler = async (event, context) => {
 
     const response = await axios.post(url, payload, { headers });
 
-    if (response.response.status === 422) {
+    if (response.status >= 300 || response.status < 200) {
       return {
-        statusCode: 422,
-        body: JSON.stringify({ msg: "Already subscribed", detail: response.data, }),
-      };
-    }
-    else if (response.response.status >= 300 || response.response.status < 200) {
-      return {
-        statusCode: response.response.status,
+        statusCode: response.status,
         body: response
       };
     }
@@ -66,9 +60,17 @@ exports.handler = async (event, context) => {
 
   } catch (err) {
     console.log(err); // output to netlify function log
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ msg: err.message }),
-    };
+    if (err.response.status === 422) {
+      return {
+        statusCode: 422,
+        body: JSON.stringify({ msg: "Already subscribed", detail: err.response.data, }),
+      };
+    }
+    else {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ msg: err.message }),
+      };
+    }
   }
 };
