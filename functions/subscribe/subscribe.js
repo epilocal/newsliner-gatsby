@@ -46,9 +46,15 @@ exports.handler = async (event, context) => {
 
     const response = await axios.post(url, payload, { headers });
 
-    if (response.status >= 300 || response.status < 200) {
+    if (response.response.status === 422) {
       return {
-        statusCode: response.status,
+        statusCode: 422,
+        body: JSON.stringify({ msg: "Already subscribed", detail: response.data, }),
+      };
+    }
+    else if (response.response.status >= 300 || response.response.status < 200) {
+      return {
+        statusCode: response.response.status,
         body: response
       };
     }
