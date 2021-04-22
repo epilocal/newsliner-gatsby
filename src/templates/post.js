@@ -30,6 +30,7 @@ const Post = ({ data, location, noImage }) => {
                 <style type="text/css">{`${post.codeinjection_styles}`}</style>
             </Helmet>
             <Layout>
+              <div className="outer">
                 <div className="inner">
                     <article className={postClass}>
                       <header className="post-full-header">
@@ -87,6 +88,7 @@ const Post = ({ data, location, noImage }) => {
                       </section>
                     </article>
                 </div>
+              </div>
             </Layout>
         </>
     )

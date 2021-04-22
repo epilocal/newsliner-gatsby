@@ -28,28 +28,31 @@ const Page = ({ data, location, noImage }) => {
                 <style type="text/css">{`${page.codeinjection_styles}`}</style>
             </Helmet>
             <Layout>
-              <div className="inner">
-                <article className={pageClass}>
-                  <header className="post-full-header">
-                    <h1 className="post-full-title">{page.title}</h1>
-                    <div className="post-full-byline"></div>
-                  </header>
+              <div className="outer">
+                <div className="inner">
+                  <article className={pageClass}>
+                    <header className="post-full-header">
+                      <h1 className="post-full-title">{page.title}</h1>
+                      <div className="post-full-byline"></div>
+                    </header>
 
-                  { page.feature_image ?
-                      <figure className="post-full-image">
-                          <img src={ page.feature_image } alt={ page.title } />
-                      </figure> : null }
+                    { page.feature_image ?
+                        <figure className="post-full-image">
+                            <img src={ page.feature_image } alt={ page.title } />
+                        </figure> : null }
 
-                    {/* The main page content */}
-                    <div className="post-full-content">
-                      <section
-                          className="post-content load-external-scripts"
-                          dangerouslySetInnerHTML={{ __html: page.html }}
-                      />
-                    </div>
+                      {/* The main page content */}
+                      <div className="post-full-content">
+                        <section
+                            className="post-content load-external-scripts"
+                            dangerouslySetInnerHTML={{ __html: page.html }}
+                        />
+                      </div>
+                  </article>
+                </div>
 
-                </article>
               </div>
+
             </Layout>
         </>
     )
