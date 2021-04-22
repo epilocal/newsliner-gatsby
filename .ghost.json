@@ -1,10 +1,10 @@
 {
   "development": {
-    "apiUrl": "https://gatsby.ghost.io",
-    "contentApiKey": "9cc5c67c358edfdd81455149d0"
+    "apiUrl": "https://cloud.epilocal.com/epilocal",
+    "contentApiKey": "d90f7c08a1bf77011bc9ca144f"
   },
   "production": {
-    "apiUrl": "https://gatsby.ghost.io",
-    "contentApiKey": "9cc5c67c358edfdd81455149d0"
+    "apiUrl": "https://cloud.epilocal.com/epilocal",
+    "contentApiKey": "d90f7c08a1bf77011bc9ca144f"
   }
 }

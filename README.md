@@ -42,7 +42,7 @@ Start the development server. You now have a Gatsby site pulling content from he
 gatsby develop
 ```
 
-By default, the starter will populate content from a default Ghost install located at https://gatsby.ghost.io.
+By default, the starter will populate content from a default Ghost install located at https://cloud.epilocal.com/epilocal.
 
 To use your own install, you will need to edit the `.ghost.json` config file with your credentials. Change the `apiUrl` value to the URL of your Ghost site. For Ghost(Pro) customers, this is the Ghost URL ending in `.ghost.io`, and for people using the self-hosted version of Ghost, it's the same URL used to access your site.
 
