@@ -137,15 +137,18 @@ exports.createPages = async ({ graphql, actions }) => {
         // a `/:slug/` permalink.
         node.url = `/${node.slug}/`
 
+        let context = {
+            // Data passed to context is available
+            // in page queries as GraphQL variables.
+            slug: node.slug
+        };
+        if (node.primary_tag) {
+          context.primary_tag = node.primary_tag.slug;
+        }
         createPage({
             path: node.url,
             component: postTemplate,
-            context: {
-                // Data passed to context is available
-                // in page queries as GraphQL variables.
-                slug: node.slug,
-                primary_tag: node.primary_tag.slug
-            },
+            context: context
         })
     })
 

@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import { Navigation, MobileMenu } from '.'
+import { Navigation } from '.'
 import config from '../../utils/siteConfig'
 
 

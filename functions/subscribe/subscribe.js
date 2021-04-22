@@ -33,7 +33,7 @@ exports.handler = async (event, context) => {
     });
 
     // Make an authenticated request to create a post
-    const url = `${process.env.GHOST_ADMIN_API_URL}/members/`;
+    const url = `${process.env.GHOST_API_URL}/ghost/api/v3/admin/members/`;
     const headers = { Authorization: `Ghost ${token}` };
     const payload = { members: [{ email: email }] };
 
