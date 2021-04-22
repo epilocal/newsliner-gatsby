@@ -19,8 +19,6 @@ const Post = ({ data, location, noImage }) => {
     let postClass = 'post-full';
     if (noImage) {postClass = postClass + ' no-image'};
 
-    console.log(post);
-
     return (
         <>
             <MetaData

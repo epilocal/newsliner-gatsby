@@ -140,7 +140,8 @@ exports.createPages = async ({ graphql, actions }) => {
         let context = {
             // Data passed to context is available
             // in page queries as GraphQL variables.
-            slug: node.slug
+            slug: node.slug,
+            primary_tag: ''
         };
         if (node.primary_tag) {
           context.primary_tag = node.primary_tag.slug;

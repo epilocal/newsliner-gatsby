@@ -34,7 +34,6 @@ const SubscribeForm = ({ children, buttonText, successMessage, errorMessage, cus
      }
      postData('/api/subscribe/')
        .then(data => {
-         console.log(data);
          setTimeout(form.reset);
          setShowLoading(false);
          if (data.success) { setShowSuccessMessage(true) }
