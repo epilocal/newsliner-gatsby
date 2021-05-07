@@ -1,10 +1,10 @@
 {
   "development": {
     "apiUrl": "https://cloud.epilocal.com/epilocal",
-    "contentApiKey": "d90f7c08a1bf77011bc9ca144f"
+    "contentApiKey": "30c95246e659cc4777504a4f84"
   },
   "production": {
     "apiUrl": "https://cloud.epilocal.com/epilocal",
-    "contentApiKey": "d90f7c08a1bf77011bc9ca144f"
+    "contentApiKey": "30c95246e659cc4777504a4f84"
   }
 }
